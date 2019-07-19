@@ -11,7 +11,7 @@ import (
 )
 
 var Analyzer = &analysis.Analyzer{
-	Name:             "mutat",
+	Name:             "forgetptr",
 	Doc:              Doc,
 	Requires:         []*analysis.Analyzer{inspect.Analyzer},
 	Run:              run,
@@ -19,7 +19,7 @@ var Analyzer = &analysis.Analyzer{
 }
 
 const (
-	Doc = "mutat validates if reciver is not pointer"
+	Doc = "forgetptr validates the code that forget to set pointer receiver."
 )
 
 type state struct {
